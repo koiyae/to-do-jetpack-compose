@@ -1,4 +1,4 @@
-package com.example.todolist.ui.components
+package com.example.todolist.ui.screens.mainscreen.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row

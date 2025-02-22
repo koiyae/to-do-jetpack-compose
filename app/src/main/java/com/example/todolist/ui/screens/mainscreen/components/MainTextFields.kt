@@ -1,4 +1,4 @@
-package com.example.todolist.ui.components
+package com.example.todolist.ui.screens.mainscreen.components
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
@@ -14,7 +14,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun TextFields(
+fun MainTextFields(
     title: MutableState<String>,
     task: MutableState<String>,
     modifier: Modifier = Modifier
@@ -33,7 +33,7 @@ fun TextFields(
                 focusedIndicatorColor = Color.Transparent,
                 unfocusedIndicatorColor = Color.Transparent
             ),
-            shape = MaterialTheme.shapes.medium,
+            shape = MaterialTheme.shapes.extraLarge,
         )
 
         TextField(
@@ -49,7 +49,7 @@ fun TextFields(
                 focusedIndicatorColor = Color.Transparent,
                 unfocusedIndicatorColor = Color.Transparent
             ),
-            shape = MaterialTheme.shapes.medium,
+            shape = MaterialTheme.shapes.extraLarge,
         )
     }
 }

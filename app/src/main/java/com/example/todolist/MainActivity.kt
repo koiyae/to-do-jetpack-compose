@@ -16,7 +16,9 @@ import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import com.example.todolist.theme.AppTheme
-import com.example.todolist.ui.screens.ToDoList
+import com.example.todolist.ui.screens.mainscreen.ToDoList
+import com.example.todolist.ui.screens.signinscreen.SignInScreen
+import com.example.todolist.ui.screens.signupscreen.SignUpScreen
 import com.example.todolist.ui.viewmodels.ToDoListViewModel
 
 class MainActivity : ComponentActivity() {
@@ -29,14 +31,16 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     val viewModel by viewModels<ToDoListViewModel>()
                     val tasksList by viewModel.uiState.collectAsState()
-                    ToDoList(
-                        viewModel,
-                        tasksList,
-                        modifier = Modifier
-                            .consumeWindowInsets(innerPadding)
-                            .padding(innerPadding)
-                            .imePadding()
-                    )
+//                    ToDoList(
+//                        viewModel,
+//                        tasksList,
+//                        modifier = Modifier
+//                            .consumeWindowInsets(innerPadding)
+//                            .padding(innerPadding)
+//                            .imePadding()
+//                    )
+//                    SignInScreen()
+                    SignUpScreen()
                 }
             }
         }

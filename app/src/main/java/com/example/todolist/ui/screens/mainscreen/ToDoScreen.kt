@@ -1,4 +1,4 @@
-package com.example.todolist.ui.screens
+package com.example.todolist.ui.screens.mainscreen
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -28,9 +28,9 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.dp
 import com.example.todolist.data.Tasks
 import com.example.todolist.data.TasksList
-import com.example.todolist.ui.components.ButtonsToDoList
-import com.example.todolist.ui.components.TextFields
-import com.example.todolist.ui.components.ToDoListItem
+import com.example.todolist.ui.screens.mainscreen.components.ButtonsToDoList
+import com.example.todolist.ui.screens.mainscreen.components.MainTextFields
+import com.example.todolist.ui.screens.mainscreen.components.ToDoListItem
 import com.example.todolist.ui.viewmodels.ToDoListViewModel
 
 
@@ -61,9 +61,9 @@ fun ToDoList(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
-
         val addItem = { addItem(viewModel, title, task, focusManager) }
         val removeItem = { viewModel.removeTask() }
+
         Column(
             Modifier
                 .fillMaxWidth()
@@ -77,7 +77,7 @@ fun ToDoList(
                 color = MaterialTheme.colorScheme.onPrimary
             )
 
-            TextFields(title, task)
+            MainTextFields(title, task)
             ButtonsToDoList(addItem, removeItem)
         }
 
