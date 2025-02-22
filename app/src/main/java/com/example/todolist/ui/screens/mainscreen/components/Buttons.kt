@@ -22,7 +22,7 @@ fun ButtonsToDoList(
             modifier = Modifier.fillMaxWidth().weight(1f),
             onClick = { removeItem() },
             colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.secondary),
-            shape = MaterialTheme.shapes.medium
+            shape = MaterialTheme.shapes.extraLarge
         ) {
             Text(text = "Remover")
         }
@@ -30,7 +30,7 @@ fun ButtonsToDoList(
             modifier = Modifier.fillMaxWidth().weight(1f),
             onClick = { addItem() },
             colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.secondary),
-            shape = MaterialTheme.shapes.medium
+            shape = MaterialTheme.shapes.extraLarge
         ) {
             Text(text = "Adicionar")
         }

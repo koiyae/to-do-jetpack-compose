@@ -29,4 +29,17 @@ class ToDoListViewModel : ViewModel() {
         }
         _uiState.value = TasksList(updatedList)
     }
+
+    fun updateTask(taskToUpdate: Tasks, newTaskValue: String) {
+        val updatedList = _uiState.value.list.map { task ->
+            if (task == taskToUpdate) {
+                task.copy(
+                    task = newTaskValue
+                )
+            } else {
+                task
+            }
+        }
+        _uiState.value = TasksList(updatedList)
+    }
 }
