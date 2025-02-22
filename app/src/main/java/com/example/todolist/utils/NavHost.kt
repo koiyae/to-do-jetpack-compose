@@ -42,7 +42,7 @@ fun ToDoNavigation(
                 onLoginPressed = {
                     it.login.let { login ->
                         if (login.isNotBlank()) {
-                            navController.navigate("main/{$login}")
+                            navController.navigate("main/$login")
                         }
                     }
                 },
