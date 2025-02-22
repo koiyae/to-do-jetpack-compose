@@ -26,12 +26,14 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.todolist.theme.AppTheme
+import com.example.todolist.data.User
 
 @Composable
-fun SignInScreen() {
+fun SignInScreen(
+    onLoginPressed: (User) -> Unit,
+    onSignUpPressed: () -> Unit
+) {
     val focusManager = LocalFocusManager.current
 
     Column(
@@ -91,7 +93,9 @@ fun SignInScreen() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f),
-                onClick = {},
+                onClick = {
+                    onSignUpPressed()
+                },
                 colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.secondaryContainer)
             ) {
                 Text(
@@ -105,7 +109,14 @@ fun SignInScreen() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f),
-                onClick = {},
+                onClick = {
+                    onLoginPressed(
+                        User(
+                            login,
+                            password
+                        )
+                    )
+                },
                 colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.inversePrimary)
             ) {
                 Text(text = "Entrar",
@@ -118,10 +129,10 @@ fun SignInScreen() {
     }
 }
 
-@Preview
-@Composable
-fun SignInScreenPreview() {
-    AppTheme {
-        SignInScreen()
-    }
-}
+//@Preview
+//@Composable
+//fun SignInScreenPreview() {
+//    AppTheme {
+//        SignInScreen()
+//    }
+//}

@@ -33,12 +33,12 @@ import com.example.todolist.ui.screens.mainscreen.components.MainTextFields
 import com.example.todolist.ui.screens.mainscreen.components.ToDoListItem
 import com.example.todolist.ui.viewmodels.ToDoListViewModel
 
-
 @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
 @Composable
 fun ToDoList(
     viewModel: ToDoListViewModel,
     tasksList: TasksList,
+    name: String,
     modifier: Modifier = Modifier
 ) {
     val title = remember { mutableStateOf("") }
@@ -72,7 +72,7 @@ fun ToDoList(
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             Text(
-                text = "To-Do",
+                text = "To-Do de $name",
                 style = MaterialTheme.typography.displayMedium,
                 color = MaterialTheme.colorScheme.onPrimary
             )

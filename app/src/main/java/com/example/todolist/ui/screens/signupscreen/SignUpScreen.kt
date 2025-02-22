@@ -26,12 +26,12 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.todolist.theme.AppTheme
 
 @Composable
-fun SignUpScreen() {
+fun SignUpScreen(
+    onBackPressed: () -> Unit,
+) {
     val focusManager = LocalFocusManager.current
 
     Column(
@@ -71,7 +71,8 @@ fun SignUpScreen() {
             ),
             shape = MaterialTheme.shapes.extraLarge,
         )
-        TextField(modifier = Modifier.fillMaxWidth(),
+        TextField(
+            modifier = Modifier.fillMaxWidth(),
             value = password,
             onValueChange = { password = it },
             label = { Text("Senha") },
@@ -86,7 +87,8 @@ fun SignUpScreen() {
             shape = MaterialTheme.shapes.extraLarge,
         )
 
-        TextField(modifier = Modifier.fillMaxWidth(),
+        TextField(
+            modifier = Modifier.fillMaxWidth(),
             value = confirmPassword,
             onValueChange = { confirmPassword = it },
             label = { Text("Confirmar senha") },
@@ -107,7 +109,7 @@ fun SignUpScreen() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f),
-                onClick = { /* TODO */ },
+                onClick = { onBackPressed() },
                 colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.secondaryContainer)
             ) {
                 Text(
@@ -121,10 +123,11 @@ fun SignUpScreen() {
                 modifier = Modifier
                     .fillMaxWidth()
                     .weight(1f),
-                onClick = {/* TODO */ },
+                onClick = { onBackPressed() },
                 colors = ButtonDefaults.buttonColors(MaterialTheme.colorScheme.inversePrimary)
             ) {
-                Text(text = "Confirmar",
+                Text(
+                    text = "Confirmar",
                     style = TextStyle(
                         color = MaterialTheme.colorScheme.onSecondaryContainer
                     )
@@ -132,13 +135,5 @@ fun SignUpScreen() {
             }
         }
 
-    }
-}
-
-@Preview
-@Composable
-fun SignUpScreenPreview() {
-    AppTheme {
-        SignUpScreen()
     }
 }
